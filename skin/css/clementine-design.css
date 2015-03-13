@@ -1,0 +1,43 @@
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting {
+    position: relative;
+}
+table.dataTable thead .sorting_asc::after,
+table.dataTable thead .sorting_desc::after,
+table.dataTable thead .sorting::after {
+    float: none;
+    position: absolute;
+    left: 0;
+}
+table.dataTable thead .sorting::after {
+    opacity: 0.3;
+}
+table.dataTable thead .clementine_crud-list_table_th_actions.sorting::after {
+    content: "";
+}
+
+@media (max-width: 480px) {
+
+    .dataTables_wrapper .dataTables_paginate li.paginate_button {
+        display: none;
+    }
+    .dataTables_paginate li.paginate_button.previous,
+    .dataTables_paginate li.paginate_button.first,
+    .dataTables_paginate li.paginate_button.active,
+    .dataTables_paginate li.paginate_button.next,
+    .dataTables_paginate li.paginate_button.last {
+        display: inline-block;
+    }
+    .dataTables_paginate li.paginate_button.active a::after,
+    .dataTables_paginate li.paginate_button.active a::before {
+        content: " ... ";
+    }
+
+}
+
+@media(min-width:768px) {
+    .sidebar {
+        margin-top: 0;
+    }
+}
