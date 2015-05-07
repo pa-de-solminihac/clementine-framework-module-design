@@ -34,10 +34,24 @@ table.dataTable thead .clementine_crud-list_table_th_actions.sorting::after {
         content: " ... ";
     }
 
+    body .navbar .navbar-brand {
+        display: none;
+    }
+
 }
 
 @media(min-width:768px) {
     .sidebar {
         margin-top: 0;
     }
+
 }
+
+.navbar-header {
+    float: none;
+}
+
+.navbar-top-links {
+    float: right;
+}
+

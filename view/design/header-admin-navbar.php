@@ -1,7 +1,6 @@
             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 <?php
 $this->getBlock('design/header-admin-navbar-header', $data, $request);
-$this->getBlock('design/header-admin-navbar-top-links', $data, $request);
 ?>
             </nav>
 

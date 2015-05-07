@@ -10,6 +10,9 @@ if (!empty($data['navbar-sidebar'])) {
                     </button>
 <?php
 }
-?> 
+if (!empty($data['navbar-toplinks'])) {
+    $this->getBlock('design/header-admin-navbar-top-links', $data, $request);
+}
+?>
                     <a class="navbar-brand" href="<?php echo __WWW__; ?>"><?php echo Clementine::$config['clementine_global']['site_name']; ?></a>
                 </div>
