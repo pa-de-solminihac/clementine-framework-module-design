@@ -1,18 +1,27 @@
-                <div class="navbar-header">
+<?php
+$is_iframe_class = 'not-an-iframe';
+if ($request->get('int', 'is_iframe')) {
+    $is_iframe_class = 'is-an-iframe';
+}
+?>            
+            <nav class="navbar navbar-default navbar-static-top <?php echo $is_iframe_class; ?>" role="navigation" style="margin-bottom: 0">
+<?php
+$this->getBlock('design/header-admin-navbar-header', $data, $request);
+?>
+            </nav>
+
 <?php
 if (!empty($data['navbar-sidebar'])) {
 ?>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                <nav class="navbar-default sidebar <?php echo $is_iframe_class; ?>" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+<?php
+    $this->getBlock('design/header-admin-navbar-search', $data, $request);
+    $this->getBlock('design/header-admin-navbar-sidebar', $data, $request);
+?>
+                        </ul>
+                    </div>
+                </nav>
 <?php
 }
-if (!empty($data['navbar-toplinks'])) {
-    $this->getBlock('design/header-navbar-top-links', $data, $request);
-}
-?>
-                    <a class="navbar-brand" href="<?php echo __WWW__; ?>"><?php echo Clementine::$config['clementine_global']['site_name']; ?></a>
-                </div>
