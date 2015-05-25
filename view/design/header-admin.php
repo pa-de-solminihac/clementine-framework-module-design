@@ -65,7 +65,10 @@ $data['navbar-toplinks'] = array (
 
 $data['navbar-breadcrumb'] = $data['navbar-toplinks'];
 */
-
+$is_iframe_class = 'not-an-iframe';
+if ($request->get('int', 'is_iframe')) {
+    $is_iframe_class = 'is-an-iframe';
+}
 $this->getBlock('bootstrap3/cssjs', $data, $request);
 if (!$request->AJAX && !(isset($data['return_json']) && $data['return_json'])) {
 ?><!DOCTYPE html>
@@ -101,7 +104,7 @@ if (!$request->AJAX && !(isset($data['return_json']) && $data['return_json'])) {
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     </head>
-    <body>
+    <body class="<?php echo $is_iframe_class; ?>">
         <div id="wrapper">
 <?php
     $this->getBlock('design/header-admin-navbar', $data, $request);
