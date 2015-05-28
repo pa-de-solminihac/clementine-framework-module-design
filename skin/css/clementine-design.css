@@ -52,6 +52,7 @@ table.dataTable thead .clementine_crud-list_table_th_actions.sorting::after {
         position: fixed;
         left: 0;
         right: 0;
+        z-index: 5;
     }
 
     .sidebar-nav {
