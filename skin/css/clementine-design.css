@@ -47,6 +47,32 @@ table.dataTable thead .clementine_crud-list_table_th_actions.sorting::after {
 
 }
 
+@media(max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 5;
+    }
+
+    .sidebar-nav {
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 5px rgba(0, 0, 0, .075);
+    }
+}
+
+#page-wrapper, .sidebar {
+    padding-top: 50px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 6;
+}
+
 .navbar-header {
     float: none;
 }
