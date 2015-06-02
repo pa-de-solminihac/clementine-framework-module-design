@@ -61,7 +61,7 @@ table.dataTable thead .clementine_crud-list_table_th_actions.sorting::after {
     }
 }
 
-#page-wrapper, .sidebar {
+#wrapper {
     padding-top: 50px;
 }
 
