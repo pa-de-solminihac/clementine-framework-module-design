@@ -1,4 +1,4 @@
             </div>
         </div>
 <?php
-$this->getBlock('bootstrap3/footer', $data, $request);
+Clementine::getBlock('bootstrap3/footer', $data, $request);

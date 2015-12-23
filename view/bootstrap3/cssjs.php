@@ -1,6 +1,6 @@
 <?php
-$cssjs = $this->getModel('cssjs');
-$this->getParentBlock($data, $request);
+$cssjs = Clementine::getModel('cssjs');
+Clementine::getParentBlock($data, $request);
 $cssjs->register_css('module_design-timeline', array(
     'src' => __WWW_ROOT_DESIGN__ . '/skin/css/timeline.css'
 ));
@@ -20,8 +20,8 @@ $cssjs->register_foot('module_metismenujs-metismenu', array(
     'src' => __WWW_ROOT_METISMENUJS__ . '/skin/js/metisMenu.js',
 ));
 $cssjs->register_foot('module_metismenujs-metismenu_foot',
-    $this->getBlockHtml('metismenujs/js_metismenu', $this->data, $request)
+    Clementine::getBlockHtml('metismenujs/js_metismenu', $data, $request)
 );
 $cssjs->register_foot('module_design-sbadmin2',
-    $this->getBlockHtml('design/js_sbadmin2', $this->data, $request)
+    Clementine::getBlockHtml('design/js_sbadmin2', $data, $request)
 );

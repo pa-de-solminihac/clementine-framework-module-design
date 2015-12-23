@@ -11,7 +11,7 @@ if (!empty($data['navbar-sidebar'])) {
 <?php
 }
 if (!empty($data['navbar-toplinks'])) {
-    $this->getBlock('design/header-navbar-top-links', $data, $request);
+    Clementine::getBlock('design/header-navbar-top-links', $data, $request);
 }
 ?>
                     <a class="navbar-brand" href="<?php echo __WWW__; ?>"><?php echo Clementine::$config['clementine_global']['site_name']; ?></a>

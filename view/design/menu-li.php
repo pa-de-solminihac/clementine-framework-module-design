@@ -61,7 +61,7 @@ foreach ($data as $name => $menu) {
         if (!empty($menu['dropdown']['data'])) {
             $dropdown_data = $menu['dropdown']['data'];
         }
-        $this->getBlock($menu['dropdown']['block'], $dropdown_data, $request);
+        Clementine::getBlock($menu['dropdown']['block'], $dropdown_data, $request);
     } else if (!empty($menu['recursive_menu'])) {
         $level = 1;
         $level_class = '';
@@ -85,7 +85,7 @@ foreach ($data as $name => $menu) {
 ?>
                             <ul class="nav <?php echo $level_class; ?>">
 <?php
-        $this->getBlock('design/menu-li', $recursive_menu, $request);
+        Clementine::getBlock('design/menu-li', $recursive_menu, $request);
 ?>
                             </ul>
 <?php

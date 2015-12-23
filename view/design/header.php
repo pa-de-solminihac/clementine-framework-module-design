@@ -3,7 +3,7 @@ $is_iframe_class = 'not-an-iframe';
 if ($request->get('int', 'is_iframe')) {
     $is_iframe_class = 'is-an-iframe';
 }
-$this->getBlock('bootstrap3/cssjs', $data, $request);
+Clementine::getBlock('bootstrap3/cssjs', $data, $request);
 if (!$request->AJAX && !(isset($data['return_json']) && $data['return_json'])) {
 ?><!DOCTYPE html>
 <html>
@@ -29,7 +29,7 @@ if (!$request->AJAX && !(isset($data['return_json']) && $data['return_json'])) {
 ?>" />
         <meta name="robots" content="index, follow, all" />
 <?php
-    $this->getBlock('cssjs/head', $data, $request);
+    Clementine::getBlock('cssjs/head', $data, $request);
 ?>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,6 +41,6 @@ if (!$request->AJAX && !(isset($data['return_json']) && $data['return_json'])) {
     <body class="<?php echo $is_iframe_class; ?>">
         <div id="wrapper">
 <?php
-    $this->getBlock('design/header-navbar', $data, $request);
-    $this->getBlock('design/header-breadcrumb', $data, $request);
+    Clementine::getBlock('design/header-navbar', $data, $request);
+    Clementine::getBlock('design/header-breadcrumb', $data, $request);
 }
