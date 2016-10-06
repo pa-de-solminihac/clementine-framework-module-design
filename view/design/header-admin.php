@@ -66,7 +66,8 @@ $data['navbar-toplinks'] = array (
 $data['navbar-breadcrumb'] = $data['navbar-toplinks'];
 */
 $is_iframe_class = 'not-an-iframe';
-if ($request->get('int', 'is_iframe')) {
+$is_iframe = $request->get('int', 'is_iframe');
+if ($is_iframe) {
     $is_iframe_class = 'is-an-iframe';
 }
 $this->getBlock('bootstrap3/cssjs', $data, $request);
@@ -105,11 +106,15 @@ if (!$request->AJAX && !(isset($data['return_json']) && $data['return_json'])) {
     <![endif]-->
     </head>
     <body class="<?php echo $is_iframe_class; ?>">
+<?php
+    if (!$is_iframe) {
+?>
         <div id="wrapper">
 <?php
-    $this->getBlock('design/header-admin-navbar', $data, $request);
+        $this->getBlock('design/header-admin-navbar', $data, $request);
 ?>
             <div id="page-wrapper">
 <?php
-    $this->getBlock('design/header-admin-breadcrumb', $data, $request);
+        $this->getBlock('design/header-admin-breadcrumb', $data, $request);
+    }
 }
