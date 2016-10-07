@@ -1,6 +1,7 @@
 <?php
 $is_iframe_class = 'not-an-iframe';
-if ($request->get('int', 'is_iframe')) {
+$is_iframe = $request->get('int', 'is_iframe');
+if ($is_iframe) {
     $is_iframe_class = 'is-an-iframe';
 }
 $this->getBlock('bootstrap3/cssjs', $data, $request);
@@ -41,6 +42,8 @@ if (!$request->AJAX && !(isset($data['return_json']) && $data['return_json'])) {
     <body class="<?php echo $is_iframe_class; ?>">
         <div id="wrapper">
 <?php
-    $this->getBlock('design/header-navbar', $data, $request);
-    $this->getBlock('design/header-breadcrumb', $data, $request);
+    if (!$is_iframe) {
+        $this->getBlock('design/header-navbar', $data, $request);
+        $this->getBlock('design/header-breadcrumb', $data, $request);
+    }
 }
